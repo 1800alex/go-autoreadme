@@ -5,13 +5,11 @@ package main
 
 import "text/template"
 
-var tmplraw = `# {{.Name}}{{/*
-*/}}{{if .Library}} [![GoDoc](https://godoc.org/{{.Import}}?status.svg)](https://godoc.org/{{.Import}}){{end}}{{/*
-*/}}{{if .Travis}}
-[![Build Status](https://travis-ci.com/{{.RepoPath}}.svg?branch=master)](https://travis-ci.com/{{.RepoPath}})
+var tmplraw = `# {{.Name}}
+{{if .Travis}}[![Build Status](https://travis-ci.com/{{.RepoPath}}.svg?branch=master)](https://travis-ci.com/{{.RepoPath}})
 [![Coverage Status](https://coveralls.io/repos/github/{{.RepoPath}}/badge.svg?branch=master)](https://coveralls.io/github/{{.RepoPath}}?branch=master)
-[![Go Report Card](https://goreportcard.com/badge/github.com/{{.RepoPath}})](https://goreportcard.com/report/github.com/{{.RepoPath}})
-{{end}}
+[![Go Report Card](https://goreportcard.com/badge/github.com/{{.RepoPath}})](https://goreportcard.com/report/github.com/{{.RepoPath}}){{end}}
+{{if .Library}}[![GoDoc](https://godoc.org/{{.Import}}?status.svg)](https://godoc.org/{{.Import}}){{end}}
 
 {{.Synopsis}}
 
