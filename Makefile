@@ -1,7 +1,7 @@
 GO := go
 RM := rm
 STRIP := $(CROSS_COMPILE)strip
-BINARY := ../../../../bin/autoreadme
+BINARY := ../../../../bin/go-autoreadme
 
 export GOPATH := $(shell pwd)/vendor/
 
